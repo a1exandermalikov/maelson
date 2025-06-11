@@ -1,0 +1,56 @@
+@import './Colors.css';
+@import './Fonts.css';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	color: var(--text-muted);
+	font-family: var(--text-font);
+}
+
+:root {
+	--text-normal: var(--color-stone-50);
+	--text-muted: var(--color-stone-400);
+
+	--color-50: var(--color-stone-50);
+	--color-100: var(--color-stone-100);
+	--color-200: var(--color-stone-200);
+	--color-300: var(--color-stone-300);
+	--color-400: var(--color-stone-400);
+	--color-500: var(--color-stone-500);
+	--color-600: var(--color-stone-600);
+	--color-700: var(--color-stone-700);
+	--color-800: var(--color-stone-800);
+	--color-900: var(--color-stone-900);
+	--color-950: var(--color-stone-950);
+
+	--radius: 0.5rem;
+}
+
+body {
+	background-color: var(--color-950);
+	width: 100svw;
+	height: 100svh;
+}
+
+.page {
+	display: flex;
+	flex-direction: column;
+}
+
+/* Плавное исчезновение */
+body.fade-out {
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+/* Вернуть прозрачность после перехода */
+body {
+	opacity: 1;
+	transition: opacity 0.3s ease;
+}
+
+.icon {
+	color: var(--color-400);
+}
