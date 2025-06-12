@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { Button } from '../../components/Button/Button'
+import backgroundMusic from '../../assets/audio/background.mp3' // ✅ импорт mp3
 import './EnterPage.css'
 
 export default function EnterPage() {
@@ -8,7 +9,7 @@ export default function EnterPage() {
 	const handleEnter = () => {
 		// Запуск фоновой музыки
 		if (!window.backgroundAudio) {
-			window.backgroundAudio = new Audio('/src/assets/audio/background.mp3')
+			window.backgroundAudio = new Audio(backgroundMusic) // ✅ путь соберётся Vite-ом
 			window.backgroundAudio.loop = true
 			window.backgroundAudio.volume = 0.5
 		}
@@ -19,7 +20,7 @@ export default function EnterPage() {
 		// Переход с анимацией
 		document.body.classList.add('fade-out')
 		setTimeout(() => {
-			navigate('/main') // или '/main' — как нужно
+			navigate('/main')
 		}, 300)
 	}
 
