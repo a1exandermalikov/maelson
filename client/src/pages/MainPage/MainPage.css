@@ -52,10 +52,10 @@ section {
 }
 
 .hero h2 {
-	font-size: var(--font-8xl);
+	font-size: var(--font-10xl);
 	display: flex;
 	flex-wrap: wrap;
-	gap: 20px;
+	gap: 25px;
 	align-items: center;
 	justify-content: center;
 	font-family: var(--system-font);
@@ -67,14 +67,14 @@ section {
 
 .hero h2 hr {
 	border: 3px solid white;
-	height: var(--font-7xl);
+	height: var(--font-9xl);
 	border-radius: var(--radius);
 	filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.904));
 }
 
 .hero h2 i {
 	color: var(--text-normal);
-	font-size: var(--font-7xl);
+	font-size: var(--font-9xl);
 	filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.29));
 }
 
@@ -88,7 +88,7 @@ section {
 .about,
 .stack,
 .tech-stack {
-	padding: 100px 20px;
+	padding: 50px 20px;
 	color: white;
 	box-sizing: border-box;
 }
@@ -96,24 +96,27 @@ section {
 .about-title,
 .stack-title {
 	text-align: center;
-	font-size: var(--font-6xl);
+	justify-content: center;
+	display: flex;
+	gap: 15px;
+	align-items: center;
+	margin-bottom: 50px;
+}
+
+.about-title span,
+.stack-title span {
 	text-transform: uppercase;
 	font-weight: bold;
-	margin-bottom: 50px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 15px;
-	font-family: var(--system-font);
 	color: var(--text-normal);
 	letter-spacing: 1px;
-	flex-wrap: wrap;
+	font-size: var(--font-6xl);
+	font-family: var(--system-font), var(--text-font);
 }
 
 .about-title i,
 .stack-title i {
-	font-size: var(--font-5xl);
 	color: var(--text-normal);
+	font-size: var(--font-5xl);
 }
 
 .about-grid,
@@ -123,7 +126,7 @@ section {
 	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 	gap: 35px;
 	margin: 0 auto;
-	max-width: 1000px;
+	max-width: 1100px;
 	width: 100%;
 }
 
@@ -146,7 +149,7 @@ section {
 	align-items: center;
 	gap: 10px;
 	color: var(--text-normal);
-	font-family: var(--system-font);
+	font-family: var(--system-font), var(--text-font);
 	letter-spacing: 1px;
 }
 
@@ -159,7 +162,7 @@ section {
 .stack-card ul {
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
+	gap: 15px;
 	list-style: none;
 	padding-left: 0;
 }
@@ -169,12 +172,19 @@ section {
 	font-size: var(--font-2xl);
 	cursor: pointer;
 	transition: all 0.1s ease;
+	font-family: var(--text-font);
+	width: max-content;
+}
+
+.about-card li::before,
+.stack-card li::before {
+	content: '→ ';
 }
 
 .about-card li:hover,
 .stack-card li:hover {
 	color: var(--text-normal);
-	padding-left: 5px;
+	transform: translateX(5px);
 }
 
 /* 🌐 Медиа-запросы */

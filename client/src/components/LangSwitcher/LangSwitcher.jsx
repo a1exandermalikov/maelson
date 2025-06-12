@@ -1,30 +1,20 @@
-import { useState, useEffect } from 'react'
 import './LangSwitcher.css'
+import { useLang } from '../../i18n/i18nContext'
 
 export default function LangSwitcher() {
-	const [lang, setLang] = useState('en')
-
-	useEffect(() => {
-		const saved = localStorage.getItem('lang')
-		if (saved) setLang(saved)
-	}, [])
-
-	const switchTo = newLang => {
-		setLang(newLang)
-		localStorage.setItem('lang', newLang)
-	}
+	const { lang, toggleLang } = useLang()
 
 	return (
 		<div className='lang-switcher'>
 			<span
 				className={`lang-option ${lang === 'en' ? 'active' : ''}`}
-				onClick={() => switchTo('en')}
+				onClick={() => toggleLang()}
 			>
 				en
 			</span>
 			<span
 				className={`lang-option ${lang === 'ru' ? 'active' : ''}`}
-				onClick={() => switchTo('ru')}
+				onClick={() => toggleLang()}
 			>
 				ru
 			</span>
